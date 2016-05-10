@@ -1,0 +1,38 @@
+<ion-view view-title="Upload File" ng-init="initCtrl()">
+   
+    <ion-content class="padding has-header">
+       
+        <div class="card">
+							<form role="form" name="uploadForm">
+							
+									
+										<div class="item item-divider">Where to Print?</div>
+									  <label class="item item-input item-select">
+													<div class="row input-label">
+													  Shop
+													</div>
+													<select  ng-model='data.shopid'>
+														<option selected></option>
+													  	<option ng-repeat="shop in shops" ng-value="{{shop.id}}">{{shop.shopname}}</option>
+													</select>
+									  </label>
+									<div class="item item-divider">Print Options</div>
+									<ion-radio ng-model='data.choice' ng-value='false'>Black & White</ion-radio>
+									<ion-radio ng-model='data.choice' ng-value='true'>Colored</ion-radio>
+
+									<div class="item item-divider" style="background-color:">Notes</div>
+									<textarea placeholder="Place your additional instructions here." rows='4' cols='120' ng-model='data.notes' style="border: 1px solid #ddd; "></textarea>
+							
+							<div class="item item-divider">Upload</div>
+							<p style="padding-left:5px;"> File URL : {{data.fileUrl}}</p>
+							<div class="row item">
+								<img ng-src="" ng-show="imageUrl" />
+								<input id="fileInput" type="file" accept="*/*" ng-model="filename" />
+								<input type="button" value="x" class="delete-file" title="Delete file" ng-disabled="!data.fileUrl" ng-click="deleteFile()" />
+							</div>
+							
+							<button class="button button-block button-dark" ng-click="printRequest()">Print</button>    
+						  </form>
+       	</div>
+    </ion-content>
+</ion-view>

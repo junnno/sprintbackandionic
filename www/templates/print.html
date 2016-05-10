@@ -1,0 +1,22 @@
+<ion-view title="">
+  <ion-content class="padding" id="login_page">
+
+            <form name="login_form"  ng-submit="login.signin()">
+                <div class="list card">
+
+                    <label class="item item-input">
+                        <input id="email" name="email" type="email" placeholder="Your email" ng-model="login.email" required="">
+                    </label>
+                    <label class="item item-input">
+                        <input id="password" name="password" type="password" placeholder="Your password" ng-model="login.password" required="">
+                    </label>
+                </div>
+                <div class="padding">
+                    <button class="button button-block button-outline button-light" type="submit">
+                        Login
+                    </button>
+                </div>
+            </form>
+
+  </ion-content>
+</ion-view>

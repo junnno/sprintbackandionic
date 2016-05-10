@@ -1,0 +1,64 @@
+<ion-view view-title="Dashboard" class="">
+ <ion-side-menus>
+  <!-- Center content -->
+   <ion-side-menu-content  scroll="true" has-bouncing="true" overflow-scroll="false">
+
+      <ion-content  scroll="true" has-bouncing="true" overflow-scroll="false">
+              <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+  
+                    <ion-item class="item-remove-animate item-thumbnail-left item-icon-right">
+								    <img ng-src="img/avatar.png">
+								          <h2 style="padding-top:5px;">{{userData.firstname}} {{userData.lastname}}</h2>
+								          <p>{{userData.student_number}}</p>
+								          <p>{{userData.degree_course}}</p>
+								          	  
+     			 </ion-item>
+     			 
+                <ion-list>
+            
+                         
+                         <ion-item class="item item-divider item-balanced" ng-click="toggleGroup(groups[0])"
+                    ng-class="{active: isGroupShown(groups[0])}"> <i class="icon" ng-class="isGroupShown(groups[0]) ? 'ion-checkmark-round' : 'ion-checkmark-round'" style="padding-right:10px;font-size:25px"></i>Ready for Pick-up</ion-item>
+                                                                       <ion-item ng-repeat="item in ready" class="item-accordion"  ng-show="isGroupShown(groups[0])">   
+                                                                                  <span ng-if="readyFlag"> {{item.filename}} {{item.upload_name}}</span>
+                                                                                 <p>{{item.shopname}} {{item.date_requested}}</p>
+                                                                        </ion-item>
+                           <ion-item class="item item-divider item-assertive" ng-click="toggleGroup(groups[1])"
+                    ng-class="{active: isGroupShown(groups[1])}"><i class="icon" ng-class="isGroupShown(groups[1]) ? 'ion-android-hand' : 'ion-android-hand'" style="padding-right:10px;font-size:25px"></i>Pending</ion-item>
+                                                                    <ion-item ng-repeat="item in pending" class="item-accordion"  ng-show="isGroupShown(groups[1])">   
+                                                                                 <span ng-if="pendingFlag"> {{item.filename}} {{item.upload_name}}</span>
+                                                                                 <p>{{item.shopname}}  {{item.date_requested}}</p>
+                                                                              <ion-option-button class="button button-assertive" ng-click="cancelRequest({{item.id}})">Cancel</ion-option-button>
+                                                                        </ion-item>
+                          <ion-item class="item item-divider item-stable" ng-click="toggleGroup(groups[2])"
+                    ng-class="{active: isGroupShown(groups[2])}"><i class="icon" ng-class="isGroupShown(groups[2]) ? 'ion-clipboard' : 'ion-clipboard'" style="padding-right:10px; font-size:25px;"></i> Completed</ion-item>
+                                                                    <ion-item ng-repeat="item in completed" class="item-accordion"  ng-show="isGroupShown(groups[2])">   
+                                                                                  <span ng-if="completedFlag"> {{item.filename}} {{item.upload_name}}</span>
+                                                                                 <p>{{item.shopname}} {{item.date_requested}}</p>
+                                                                    </ion-item>
+                                                                                                
+           
+
+              </ion-list>
+                 <button class="button button-small button-block button-stable" ng-click="logout()">Logout</button>       
+
+      </ion-content>
+   </ion-side-menu-content>
+
+
+  <!-- Left menu -->
+  <ion-side-menu side="left">
+     
+           <ion-content overflow-scroll="false"  scroll="true" has-bouncing="false">
+     <a class="item item-divider item-stable" ng-click="logout()">Logout</a>       
+
+      </ion-content>
+  </ion-side-menu>
+  </ion-side-menus>
+
+  
+  
+</ion-view>

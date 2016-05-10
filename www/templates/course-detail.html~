@@ -1,0 +1,48 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{course.name}}">
+  <ion-content class="padding" scroll="true" has-bouncing="true" overflow-scroll="false">
+      <!--<ion-item class="item-avatar item-icon-right"  type="item-text-wrap">-->
+      
+      <ion-item class="item-icon-right item-thumbnail-left"  type="item-text-wrap" style="width : 100%">
+        <img ng-src="{{course.avatar}}">
+        <h2>{{course.name}}</h2>
+        <p>{{course.description}}</p>
+        <p>{{course.teacher}}</p>
+
+      </ion-item>
+         <ion-list>
+         <div class="item item-divider">Files</div>
+                                                                    <ion-item>   
+                                                                                 <h2> Handout #3 </h2><p> by Iskulmeyts at 4/1/2016 12:32pm (3 pages)</p> 
+                                                                             <ion-option-button class="button-assertive" ng-click="remove(course)">
+                                                                                               Print
+                                                                            </ion-option-button>
+                                                                        </ion-item>
+                                                                       <ion-item>   
+                                                                                <h2> Handout #3 </h2><p> by PrintNation at 4/1/2016 11:00pm (3 pages)</p> 
+                                                                             <ion-option-button class="button-assertive" ng-click="remove(course)">
+                                                                                               Print
+                                                                            </ion-option-button>
+                                                                        </ion-item>
+                                                                        <ion-item>   
+                                                                             <h2> Handout #2</h2><p> by Iskulmeyts at 3/24/2016 7:00am (2 pages)</p> 
+                                                                             <ion-option-button class="button-assertive" ng-click="remove(course)">
+                                                                                               Print
+                                                                            </ion-option-button>
+                                                                        </ion-item>
+                                                                          <ion-item>   
+                                                                                <h2> Handout #1</h2><p> by Iskulmeyts at 3/20/2016 7:00am (7 pages)</p> 
+                                                                             <ion-option-button class="button-assertive" ng-click="remove(course)">
+                                                                                               Print
+                                                                            </ion-option-button>
+                                                                        </ion-item>
+                                                                        
+
+         <ion-list>
+  </ion-content>
+</ion-view>
