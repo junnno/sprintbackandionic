@@ -2,7 +2,7 @@
 Print On-the-Go
 
 ###About the Project
-This is an a hybrid mobile application build in Android and is a component of Sprint! Print Request System. It is for the use of Print Shop customers in sending print requests, uploading files and even requesting copies of course handouts. It is developed using Ionic and AngularJS with Backand(Back&) as the back-end server. Backand is a cloud-based back-end service provider for AngularJS. 
+This is a hybrid mobile application build in Android. It is a component of Sprint! Print Request System for the use of Print Shop customers in sending print requests, uploading files and requesting copies of course handouts. It is developed using Ionic and AngularJS with Backand(Back&) as the back-end server. Backand is a cloud-based back-end service provider for AngularJS. 
 
 ## Testing and Installing the Unsigned APK file on your Android phone 
   This project has an already built apk file for testing on your android phones. To test it out,
